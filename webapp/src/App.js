@@ -3,6 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    const options = {
+      headers: {
+        Authorization: 'Bearer [super secret code]',
+      },
+    };
+    fetch('https://api.spotify.com/artists', options)
+      .then((res) => console.log(res));
+  }
+
   render() {
     return (
       <div className="App">

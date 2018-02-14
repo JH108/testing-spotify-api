@@ -7,7 +7,9 @@ export default ({ config, db }) => {
 
 	// mount the facets resource
 	api.use('/facets', facets({ config, db }));
-
+	api.get('/test', (req, res) => {
+		res.status(200).send('this is the message');
+	});
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
 		res.json({ version });
